@@ -12,6 +12,9 @@ buildGoModule rec {
   };
   vendorSha256 = "sha256-0ujtuidGHrVe9Abam4mVz/ZvwBisihOzFsSYDEJzivg=";
 
+  # https://github.com/pulumi/kube2pulumi/blob/9809268a81c139373572713549b5560e847eb6e9/.goreleaser.yml
+  buildFlagsArray = [ "-ldflags=-X github.com/pulumi/kube2pulumi/pkg/version.Version=v${version}" ];
+
   doCheck = false;
 
   meta = with lib; {
