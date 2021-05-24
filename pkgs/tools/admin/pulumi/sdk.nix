@@ -12,8 +12,9 @@ buildGoModule rec {
   };
   vendorSha256 = "sha256-WhkEiZu0EcjeYcH0vpMweeF1Gn84WMt7WZXvgMfKrbA=";
 
-  doCheck = false;
 
+  doCheck = false;
+  buildFlagsArray = [ "-ldflags=-X github.com/pulumi/pulumi/pkg/v3/version.Version=v${version}" ];
   modRoot = "./sdk";
   subPackages = [ "nodejs/cmd/pulumi-language-nodejs" ];
 
