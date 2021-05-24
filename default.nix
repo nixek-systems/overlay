@@ -6,4 +6,6 @@ self: super: rec {
 
   kube2pulumi = super.callPackage ./pkgs/tools/admin/kube2pulumi {};
 
+  crd2pulumi = super.callPackage ./pkgs/tools/admin/crd2pulumi {};
+
 }
