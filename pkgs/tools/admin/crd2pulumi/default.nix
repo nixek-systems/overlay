@@ -12,6 +12,8 @@ buildGoModule rec {
   };
   vendorSha256 = "sha256-baTGg8kydp9FxxsGiP7SCQGhgODs+4fH7dkS74TaJXY=";
 
+  buildFlagsArray = [ "-ldflags=-X github.com/pulumi/crd2pulumi/gen.Version=v${version}" ];
+
   doCheck = false;
 
   meta = with lib; {
