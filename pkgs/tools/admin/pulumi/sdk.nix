@@ -14,7 +14,7 @@ buildGoModule rec {
 
 
   doCheck = false;
-  buildFlagsArray = [ "-ldflags=-X github.com/pulumi/pulumi/pkg/v3/version.Version=v${version}" ];
+  ldflags = [ "-X github.com/pulumi/pulumi/pkg/v3/version.Version=v${version}" ];
   modRoot = "./sdk";
   subPackages = [ "nodejs/cmd/pulumi-language-nodejs" ];
 
